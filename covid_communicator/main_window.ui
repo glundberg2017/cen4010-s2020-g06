@@ -82,7 +82,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="emailLineEdit"/>
         </item>
        </layout>
       </item>
@@ -105,7 +105,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="passwordLineEdit">
           <property name="echoMode">
            <enum>QLineEdit::Password</enum>
           </property>
@@ -116,14 +116,14 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="loginButton">
           <property name="text">
            <string>Log in</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="registerButton">
           <property name="text">
            <string>Create an account</string>
           </property>
@@ -141,7 +141,7 @@
      <x>0</x>
      <y>0</y>
      <width>652</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
