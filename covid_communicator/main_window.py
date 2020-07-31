@@ -9,16 +9,16 @@ class MainWindow(QtWidgets.QMainWindow):
         uic.loadUi("./main_window.ui", self)
         self.logged_in = False
 
-    def on_loginButton_clicked(self):
+    def on_loginButton_released(self):
         self.startChat(self.emailLineEdit.text(), self.passwordLineEdit.text())
 
-    def on_registerButton_clicked(self):
+    def on_registerButton_released(self):
         self.startChat(self.emailLineEdit.text(), self.passwordLineEdit.text())
 
     def startChat(self, username, password):
         if not self.logged_in:
             self.logged_in = True
-            chatWindow = ChatWindow()
+            chatWindow = ChatWindow(username, None, None, None)
             chatWindow.exec_()
             
 
