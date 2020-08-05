@@ -1,6 +1,5 @@
 import os
 import sys
-import threading
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
 from database_adapter import DatabaseAdapter
@@ -9,7 +8,7 @@ class ChatWindow(QtWidgets.QDialog):
 
     def __init__(self, senderName, senderId, recipientName, recipientId):
         super(ChatWindow, self).__init__()
-        ui_file = os.path.dirname(os.path.abspath(__file__)) + '/chat_window.ui'
+        ui_file = os.path.dirname(os.path.abspath(__file__)) +os.path.sep+ 'chat_window.ui'
         uic.loadUi(ui_file, self)
         self.senderName = senderName
         self.senderId = senderId

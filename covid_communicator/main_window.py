@@ -8,7 +8,7 @@ from database_adapter import DatabaseAdapter
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        ui_file = os.path.dirname(os.path.abspath(__file__)) +"/main_window.ui"
+        ui_file = os.path.dirname(os.path.abspath(__file__)) +os.path.sep+ "main_window.ui"
         uic.loadUi(ui_file, self)
         self.db_adapter = DatabaseAdapter('lamp.eng.fau.edu', 'cen4010s2020_g06', 'faueng2020')
 
