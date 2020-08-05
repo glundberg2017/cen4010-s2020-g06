@@ -21,12 +21,6 @@ class ChatWindow(QtWidgets.QDialog):
         self.timer.timeout.connect(self.refresh)
         self.timer.start(3000)
 
-    
-    def timeout(self):
-        signal = QtCore.pyqtSignal(object)
-        signal.connect(self.refresh)
-
-
     def refresh(self):
         # Get messages between users
         messages = self.db_adapter.getMessages(self.senderId, self.recipientId)
