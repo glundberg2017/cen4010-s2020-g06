@@ -1,28 +1,17 @@
 <?php
-  require_once './php/db_connect.php';
-    
-    ?>
-<table>
-<?php
- 
-        
-       
-      $sql="SELECT id,email FROM users ORDER BY`id`DESC LIMIT 10";
-    $result= $db->query($sql);
-    
-    if($result-> num_rows > 0 ){
-        while($row=$result->fetch_assoc()){
-            echo "<tr><td>" . $row["id"] ."</td><td>" .$row["email"]."</td><td>";
-        }
-        echo "</table>";
-    }
-    else{
-        echo"0 result";
-    }
-    
-    
-    
-?>
+    require_once './php/db_connect.php';
 
-<?php 
-     $db->close() ?>
+    $id=$_POST['id'] ??'';
+
+    $sql="SELECT id,email FROM users WHERE id<>$id ORDER BY`id`DESC";
+    $result = $db->query($sql);
+
+    if ($result->num_rows > 0 ){
+        while($row=$result->fetch_assoc()){
+            //echo "<tr><td>" . $row["id"] ."</td><td>" .$row["email"]."</td><td>";
+            echo $row["id"] ."|". $row["email"] ."||";
+        }
+    }
+
+    $db->close();
+?>
